@@ -21,25 +21,35 @@ var allowedGuesses = 15;
 
 var guessedLetters = []
 
+var catchAll = []; //possibly not useful
+
 var blankWord = [];
 
 
 
 function getRandomWord() {
-    return wordOptions[Math.floor(Math.random() * wordOptions.length)];
+    return wordOptions[Math.floor(Math.random() * wordOptions.length)].toLowerCase().split("");
 }
 
 var currentWord = getRandomWord();
+
+
 var wordLength = currentWord.length;
+
 
 for (var i = 0; i < wordLength; i++)
     blankWord.push('-');
 
+// created a loop comparinging currentWord array to blankWord array  --    for ( a in currentWord) {} --
+
 // document.onkeyup = function (event) {
 
-//     var keyPress = event.key;
+//     var keyPress = event.key.toLowerCase();
 
-//     if (currentWord.includes(keyPress)) {
+//     catchAll.push(keyPress); // unsure about this
+
+//     if (x.includes(keyPress) && (catchAll.includes(keyPress) == false)) {
+//         console.log(catchAll);
 
 //     }
 // }

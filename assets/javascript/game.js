@@ -19,6 +19,8 @@ var wins = 0;
 var losses = 0;
 var allowedGuesses = 15;
 
+var guessedLetters = []
+
 var blankWord = [];
 
 
@@ -33,6 +35,14 @@ var wordLength = currentWord.length;
 for (var i = 0; i < wordLength; i++)
     blankWord.push('-');
 
+// document.onkeyup = function (event) {
+
+//     var keyPress = event.key;
+
+//     if (currentWord.includes(keyPress)) {
+
+//     }
+// }
 
 console.log(currentWord);
 console.log(blankWord);

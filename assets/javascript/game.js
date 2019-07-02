@@ -16,12 +16,24 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
 ]
 
 
+var blankWord = [];
+
+
+
 function getRandomWord() {
     return wordOptions[Math.floor(Math.random() * wordOptions.length)];
 }
 
 var currentWord = getRandomWord();
+var wordLength = currentWord.length;
+
+for (var i = 0; i < wordLength; i++)
+    blankWord.push('-');
 
 console.log(currentWord);
+console.log(blankWord);
 
-// so far, comp has chosen random word. now i need to display it as blank lines on screen.
+
+
+// so far, comp is choosing a word, word is being logged. for loop is pushing a "-" to blankWord array 
+// for wordLength (every letter in that word)

@@ -1,5 +1,5 @@
 //
-// Word Guess Game
+// Wild Wild West Word Guess Game
 // By Gerard Pelly
 //
 
@@ -15,6 +15,9 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
     "weary", "quest", "blazing", "tobacco", "bullets", "pistol", "desert"
 ]
 
+var wins = 0;
+var losses = 0;
+var allowedGuesses = 15;
 
 var blankWord = [];
 
@@ -29,6 +32,7 @@ var wordLength = currentWord.length;
 
 for (var i = 0; i < wordLength; i++)
     blankWord.push('-');
+
 
 console.log(currentWord);
 console.log(blankWord);

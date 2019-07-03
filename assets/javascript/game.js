@@ -64,11 +64,16 @@ document.onkeyup = function (event) {
 
     var guessesRemaining = allowedGuesses - guessedLetters.length; // number of guesses remaining
 
+    if (currentWord.includes(keyPress)) {
+        blankWord.splice(currentWord.indexOf(keyPress), 0, keyPress);
+    }
 
 
 
     console.log(guessedLetters);
     console.log(guessesRemaining);
+    console.log(blankWord);
+    console.log(currentWord);
 }
 
 

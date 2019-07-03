@@ -22,8 +22,6 @@ var allowedGuesses = 15; // number of guesses allowed
 
 var guessedLetters = [] // array of letters guessed by player
 
-//var guessesRemaining = allowedGuesses - guessedLetters.length; // number of guesses remaining
-
 var currentWord = getRandomWord();
 
 var wordLength = currentWord.length;
@@ -31,6 +29,7 @@ var wordLength = currentWord.length;
 var blankWord = createBlankArray();
 
 var guessedLetters = [];
+
 
 
 function getRandomWord() {
@@ -52,11 +51,12 @@ function createBlankArray() {
 
 document.onkeyup = function (event) {
 
-    var guessesRemaining = allowedGuesses - (guessedLetters.length + 1); // number of guesses remaining
     var keyPress = event.key.toLowerCase();
+    var guessesRemaining = allowedGuesses - guessedLetters.length; // number of guesses remaining
+
 
     function pushToGuessed() {
-        if (guessedLetters.length == 0) {
+        if (guessedLetters.length === 0) {
             guessedLetters.push(keyPress);
         } else if (guessedLetters.includes(keyPress) === false) {
             guessedLetters.push(keyPress);

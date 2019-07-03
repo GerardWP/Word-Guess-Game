@@ -12,18 +12,23 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
     "peacemaker", "rawhide", "rancher", "rebellious", "rodeo", "notorious",
     "stockade", "supplies", "sober", "ability", "decent", "gallop", "hardship",
     "kinship", "oppotunity", "vendetta", "terratory", "wild", "wrangler",
-    "weary", "quest", "blazing", "tobacco", "bullets", "pistol", "desert"
+    "weary", "quest", "blazing", "tobacco", "bullets", "pistol", "brawl", "desert"
 ]
 
 var wins = 0;
 var losses = 0;
-var allowedGuesses = 15;
 
-var guessedLetters = []
+var allowedGuesses = 15; // number of guesses allowed
 
-var catchAll = []; //possibly not useful
+var guessedLetters = [] // array of letters guessed by player
 
-var blankWord = [];
+var guessesRemaining = allowedGuesses - guessedLetters.length; // number of guesses remaining
+
+var currentWord = getRandomWord();
+
+var wordLength = currentWord.length;
+
+var blankWord = createBlankArray();
 
 
 
@@ -31,14 +36,14 @@ function getRandomWord() {
     return wordOptions[Math.floor(Math.random() * wordOptions.length)].toLowerCase().split("");
 }
 
-var currentWord = getRandomWord();
 
+function createBlankArray() {
+    var blankArray = [];
+    for (var i = 0; i < wordLength; i++)
+        blankArray[i] = "-";
+    return blankArray;
+};
 
-var wordLength = currentWord.length;
-
-
-for (var i = 0; i < wordLength; i++)
-    blankWord.push('-');
 
 // created a loop comparinging currentWord array to blankWord array  --    for ( a in currentWord) {} --
 
@@ -46,12 +51,6 @@ for (var i = 0; i < wordLength; i++)
 
 //     var keyPress = event.key.toLowerCase();
 
-//     catchAll.push(keyPress); // unsure about this
-
-//     if (x.includes(keyPress) && (catchAll.includes(keyPress) == false)) {
-//         console.log(catchAll);
-
-//     }
 // }
 
 console.log(currentWord);

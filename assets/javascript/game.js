@@ -47,11 +47,14 @@ function createBlankArray() {
 
 // created a loop comparinging currentWord array to blankWord array  --    for ( a in currentWord) {} --
 
-// document.onkeyup = function (event) {
+document.onkeyup = function (event) {
 
-//     var keyPress = event.key.toLowerCase();
+    var keyPress = event.key.toLowerCase();
+    guessedLetters.push(keyPress);
 
-// }
+    console.log(guessedLetters);
+
+}
 
 console.log(currentWord);
 console.log(blankWord);

@@ -52,8 +52,6 @@ function createBlankArray() {
 document.onkeyup = function (event) {
 
     var keyPress = event.key.toLowerCase();
-    var guessesRemaining = allowedGuesses - guessedLetters.length; // number of guesses remaining
-
 
     function pushToGuessed() {
         if (guessedLetters.length === 0) {
@@ -62,8 +60,9 @@ document.onkeyup = function (event) {
             guessedLetters.push(keyPress);
         }
     }
-
     pushToGuessed();
+
+    var guessesRemaining = allowedGuesses - guessedLetters.length; // number of guesses remaining
 
 
 

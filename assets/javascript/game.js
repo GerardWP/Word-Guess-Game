@@ -18,9 +18,9 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
 var wins = 0;
 var losses = 0;
 
-var allowedGuesses = 15; // number of guesses allowed
+var allowedGuesses = 15;
 
-var guessedLetters = [] // array of letters guessed by player
+var guessedLetters = []
 
 var currentWord = getRandomWord();
 
@@ -73,13 +73,6 @@ document.onkeyup = function (event) {
     console.log(currentWord);
 }
 
-// blankWord.splice(currentWord.indexOf(keyPress), 1, keyPress);
-
 
 console.log(currentWord);
 console.log(blankWord);
-
-
-
-// so far, comp is choosing a word, word is being logged. for loop is pushing a "-" to blankWord array 
-// for wordLength (every letter in that word)

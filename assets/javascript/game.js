@@ -24,8 +24,6 @@ var guessedLetters = [] // array of letters guessed by player
 
 var currentWord = getRandomWord();
 
-var wordLength = currentWord.length;
-
 var blankWord = createBlankArray();
 
 var guessedLetters = [];
@@ -39,25 +37,21 @@ function getRandomWord() {
 
 function createBlankArray() {
     var blankArray = [];
-    for (var i = 0; i < wordLength; i++)
+    for (var i = 0; i < currentWord.length; i++)
         blankArray[i] = "-";
     return blankArray;
 };
 
-function pushToGuessed(x) {
-    if (guessedLetters.includes(x) === false) {
-        guessedLetters.push(x);
-    }
-}
-
-
-// created a loop comparinging currentWord array to blankWord array  --    for ( a in currentWord) {} --
 
 document.onkeyup = function (event) {
 
     var keyPress = event.key.toLowerCase();
 
-    pushToGuessed(keyPress);
+    if (guessedLetters.includes(keyPress)) {
+        return
+    }
+
+    guessedLetters.push(keyPress);
 
     var guessesRemaining = allowedGuesses - guessedLetters.length;
 
@@ -71,6 +65,7 @@ document.onkeyup = function (event) {
 
     }
 
+    // if this array.join = that array.join then, reset all shit
 
     console.log(guessedLetters);
     console.log(guessesRemaining);

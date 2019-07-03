@@ -44,7 +44,11 @@ function createBlankArray() {
     return blankArray;
 };
 
-
+function pushToGuessed(x) {
+    if (guessedLetters.includes(x) === false) {
+        guessedLetters.push(x);
+    }
+}
 
 
 // created a loop comparinging currentWord array to blankWord array  --    for ( a in currentWord) {} --
@@ -53,21 +57,19 @@ document.onkeyup = function (event) {
 
     var keyPress = event.key.toLowerCase();
 
-    function pushToGuessed() {
-        if (guessedLetters.length === 0) {
-            guessedLetters.push(keyPress);
-        } else if (guessedLetters.includes(keyPress) === false) {
-            guessedLetters.push(keyPress);
-        }
-    }
-    pushToGuessed();
+    pushToGuessed(keyPress);
 
-    var guessesRemaining = allowedGuesses - guessedLetters.length; // number of guesses remaining
+    var guessesRemaining = allowedGuesses - guessedLetters.length;
 
     if (currentWord.includes(keyPress)) {
-        blankWord.splice(currentWord.indexOf(keyPress), 0, keyPress);
-    }
 
+        for (j = 0; j < currentWord.length; j++) {
+            if (currentWord[j] === keyPress) {
+                blankWord[j] = keyPress;
+            }
+        }
+
+    }
 
 
     console.log(guessedLetters);
@@ -75,6 +77,8 @@ document.onkeyup = function (event) {
     console.log(blankWord);
     console.log(currentWord);
 }
+
+// blankWord.splice(currentWord.indexOf(keyPress), 1, keyPress);
 
 
 console.log(currentWord);

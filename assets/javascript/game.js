@@ -32,6 +32,7 @@ var blankWord = createBlankArray();
 
 var guessedLetters = [];
 
+
 function getRandomWord() {
     return wordOptions[Math.floor(Math.random() * wordOptions.length)].toLowerCase().split("");
 }
@@ -45,25 +46,26 @@ function createBlankArray() {
 };
 
 
+
+
 // created a loop comparinging currentWord array to blankWord array  --    for ( a in currentWord) {} --
 
 document.onkeyup = function (event) {
 
     var keyPress = event.key.toLowerCase();
-    //guessedLetters.push(keyPress);
 
-    // console.log(guessedLetters);
-
-    //    for (i = 0; i < guessedLetters.length; i++) {
-
-    //    }
-
-
-    if (guessedLetters.length == 0) {
-        guessedLetters.push(keyPress);
-    } else if (keyPress in guessedLetters == true) {
-        guessedLetters.push(keyPress);
+    function pushToGuessed() {
+        if (guessedLetters.length == 0) {
+            guessedLetters.push(keyPress);
+        } else if (guessedLetters.includes(keyPress) === false) {
+            guessedLetters.push(keyPress);
+        }
     }
+
+    pushToGuessed();
+
+
+
 
     console.log(guessedLetters);
 }

@@ -94,14 +94,18 @@ document.onkeyup = function (event) {
     }
 
     if (currentWord.join() === blankWord.join()) {
-        playWinAudio();
         ++wins;
+        playWinAudio();
         guessesRemaining = [];
         guessedLetters = [];
         currentWord = getRandomWord();
-        setTimeout(function () {
-            blankWord = createBlankArray();
-        }, 2000);
+        blankWord = createBlankArray();
+        //setTimeout(createBlankArray(), 3000);
+        // setTimeout(function () {
+        //     (blankWord = createBlankArray())
+        // }, 1000);
+        console.log(currentWord);
+        console.log(blankWord);
     }
 
     theWord.innerHTML = blankWord.join("");

@@ -12,8 +12,12 @@
 </head>
 
 <body>
-
-
+    <audio id="winAudio">
+        <source src="./assets/Sound/win.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="loseAudio">
+        <source src="./assets/Sound/loser-wind.mp3" type="audio/mpeg">
+    </audio>
 
     <div class="title">
         <h1><span>The</span><br>Wild Wild West</h1>
@@ -27,12 +31,13 @@
             <p>Click any letter to begin playin'...</p>
         </div>
         <div class="winlose">
-            <p>Wins: <span id="winCount">0</span></p>
-            <p>Losses: <span id="lossCount">0</span></p>
+            <p>Won: <span id="winCount">0</span></p>
+            <p>Lost: <span id="lossCount">0</span></p>
+            <p>Guesses left: <span id="remaining">15</span></p>
         </div>
-        <p id="word">——————————</p>
+        <p id="word"></p>
         <p>GUESSED LETTERS:</p>
-        <p id="guessed">aabalsuebdlaudm</p>
+        <p id="guessed"></p>
     </div>
 
 

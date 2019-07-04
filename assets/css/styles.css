@@ -55,6 +55,7 @@ footer p {
     font-size: 1.2em;
     text-shadow: 1px 1px 3px rgb(31, 22, 22);
     letter-spacing: .04em;
+    color: #fff;
 }
 
 .clickBegin p {
@@ -86,7 +87,7 @@ footer,
     background-size: 650px;
     height: 450px;
     text-align: center;
-    color: #fff;
+    color: rgb(221, 221, 221);
     font-weight: 600;
     text-shadow: 1px 1px 3px rgb(31, 22, 22);
     letter-spacing: .04em;
@@ -95,11 +96,23 @@ footer,
 .winlose {
     display: flex;
     justify-content: space-between;
-    width: 350px;
+    width: 400px;
     text-align: inherit;
     margin: 0 auto;
     font-size: 1.2em;
     text-transform: uppercase;
+}
+
+.winlose>p:nth-of-type(1) {
+    color: rgb(187, 255, 184);
+}
+
+.winlose>p:nth-of-type(2) {
+    color: rgb(255, 190, 190);
+}
+
+.winlose>p:nth-of-type(3) {
+    color: rgb(221, 221, 221);
 }
 
 #word {
@@ -109,9 +122,10 @@ footer,
     font-weight: bolder;
     padding-left: .6em;
     display: inline-block;
+    color: #fff;
     /* display and padding used to center text properly - didnt seem to be working otherwise */
 }
 
 #guessed {
-    letter-spacing: .7em;
+    letter-spacing: .3em;
 }

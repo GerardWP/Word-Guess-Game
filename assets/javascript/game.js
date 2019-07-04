@@ -9,7 +9,7 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
     "heist", "robbery", "bounty", "convicted", "felon", "holster",
     "fortune", "infamous", "lawless", "maverick", "reckless", "bandanna",
     "feud", "blacksmith", "judge", "jail", "leather", "howdy", "hostile",
-    "peacemaker", "rawhide", "rancher", "rebellious", "rodeo", "notorious",
+    "peacemaker", "rawhide", "ranch", "rebellious", "rodeo", "notorious",
     "stockade", "supplies", "sober", "ability", "decent", "gallop", "hardship",
     "kinship", "oppotunity", "vendetta", "terratory", "wild", "wrangler",
     "weary", "quest", "blazing", "tobacco", "bullets", "pistol", "brawl", "desert"
@@ -31,7 +31,7 @@ var guessedLetters = [];
 
 
 function getRandomWord() {
-    return wordOptions[Math.floor(Math.random() * wordOptions.length)].toLowerCase().split("");
+    return wordOptions[Math.floor(Math.random() * wordOptions.length)].toUpperCase().split("");
 }
 
 
@@ -45,7 +45,7 @@ function createBlankArray() {
 
 document.onkeyup = function (event) {
 
-    var keyPress = event.key.toLowerCase();
+    var keyPress = event.key.toUpperCase();
 
     if (guessedLetters.includes(keyPress)) {
         return

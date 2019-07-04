@@ -49,13 +49,7 @@ document.onkeyup = function (event) {
 
     var keyPress = event.key.toUpperCase();
 
-    if (alphabet.includes(keyPress) === false) {
-        return
-    }
-
-    // make an alphaet array and then an if statement, if the key press doesnt match a letter, then return
-
-    if (guessedLetters.includes(keyPress)) {
+    if (guessedLetters.includes(keyPress) || alphabet.includes(keyPress) === false) {
         return
     }
 
@@ -88,6 +82,7 @@ document.onkeyup = function (event) {
         currentWord = getRandomWord();
         blankWord = createBlankArray();;
     }
+
     console.log("=============================");
     console.log(blankWord);
     console.log(currentWord);

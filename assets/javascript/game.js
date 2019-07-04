@@ -20,8 +20,6 @@ var losses = 0;
 
 var allowedGuesses = 15;
 
-var guessedLetters = []
-
 var currentWord = getRandomWord();
 
 var blankWord = createBlankArray();
@@ -66,17 +64,22 @@ document.onkeyup = function (event) {
     }
 
     if (guessesRemaining <= 0 && currentWord.join() !== blankWord.join()) {
-        console.log("You Lost!")
+        ++losses;
+        guessesRemaining = [];
+        guessedLetters = [];
+        currentWord = getRandomWord();
+        blankWord = createBlankArray();;
     }
 
     if (currentWord.join() === blankWord.join()) {
-        console.log("You Won!")
+        ++wins;
+        guessesRemaining = [];
+        guessedLetters = [];
+        currentWord = getRandomWord();
+        blankWord = createBlankArray();;
     }
 
-    // console.log(guessedLetters);
-    console.log(guessesRemaining);
-    console.log(blankWord);
-    console.log(currentWord);
+
 }
 
 

@@ -18,42 +18,10 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.title {
-    width: 600px;
-    max-width: 95%;
-    margin: 10px auto 0;
-}
-
-footer {
-    margin: auto 0 0;
-}
-
-footer,
-.title {
-    text-align: center;
-}
-
-footer p {
-    text-transform: uppercase;
-    font-size: .7em;
-    color: rgba(255, 255, 255, 0.807);
-    letter-spacing: .05em;
-}
-
-.game-content {
-    background: url(../images/wooden\ sign.png) center top no-repeat rgba(255, 255, 255, 0);
-    background-size: 600px;
-    border-radius: 20px;
-    height: 450px;
-    width: 600px;
-    margin: 0 auto;
-}
-
 h5,
 h1 {
     font-family: 'Rye', cursive;
     font-weight: lighter;
-    color: #fff;
     margin: 0 0 10px;
     text-align: center;
     text-shadow: 1px 1px 2px rgb(31, 22, 22), 0 0 25px rgb(255, 153, 0), 0 0 5px rgb(255, 0, 212);
@@ -72,4 +40,75 @@ h1 span {
 
 h5 {
     font-size: 1.2em;
+}
+
+footer p {
+    text-transform: uppercase;
+    font-size: .7em;
+    color: rgba(255, 255, 255, 0.907);
+    letter-spacing: .08em;
+}
+
+.clickBegin {
+    margin: 145px 0 0;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgb(31, 22, 22);
+    letter-spacing: .04em;
+}
+
+.clickBegin p {
+    margin: 5px;
+}
+
+.clickBegin>p:nth-of-type(2) {
+    font-size: .7em;
+}
+
+footer {
+    margin: auto 0 0;
+}
+
+footer,
+.title {
+    text-align: center;
+}
+
+.title {
+    width: 600px;
+    max-width: 95%;
+    margin: 10px auto 0;
+    color: #fff;
+}
+
+.game-content {
+    background: url(../images/wooden\ sign.png) center top no-repeat rgba(255, 255, 255, 0);
+    background-size: 650px;
+    height: 450px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgb(31, 22, 22);
+    letter-spacing: .04em;
+}
+
+.winlose {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    text-align: inherit;
+    margin: 0 auto;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+#word {
+    font-size: 1.8em;
+    letter-spacing: .7em;
+    margin: 15px 0 30px;
+    font-weight: bolder;
+}
+
+#guessed {
+    letter-spacing: .7em;
 }

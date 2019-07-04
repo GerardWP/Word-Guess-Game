@@ -9,7 +9,7 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
     "heist", "robbery", "bounty", "convicted", "felon", "holster",
     "fortune", "infamous", "lawless", "maverick", "reckless", "bandanna",
     "feud", "blacksmith", "judge", "jail", "leather", "howdy", "hostile",
-    "peacemaker", "rawhide", "ranch", "rebellious", "rodeo", "notorious",
+    "peace", "rawhide", "ranch", "rebellious", "rodeo", "notorious",
     "stockade", "supplies", "sober", "ability", "decent", "gallop", "hardship",
     "kinship", "oppotunity", "vendetta", "terratory", "wild", "wrangler",
     "weary", "quest", "blazing", "tobacco", "bullets", "pistol", "brawl", "desert"
@@ -36,7 +36,7 @@ function getRandomWord() {
 function createBlankArray() {
     var blankArray = [];
     for (var i = 0; i < currentWord.length; i++)
-        blankArray[i] = "-";
+        blankArray[i] = "—";
     return blankArray;
 };
 

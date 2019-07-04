@@ -8,7 +8,7 @@
     <title>Gerard's Wild Wild West Word Guess Game</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Rye&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,19 +18,26 @@
     <div class="title">
         <h1><span>The</span><br>Wild Wild West</h1>
         <h5>Word Guessing Game</h5>
+
     </div>
 
     <div class="game-content">
-        <p><span></span></p>
-        <p><span></span></p>
-        <p><span></span></p>
-        <p><span></span></p>
-        <p><span></span></p>
+        <div class="clickBegin">
+            <p>Howdy, Partner!</p>
+            <p>Click any letter to begin playin'...</p>
+        </div>
+        <div class="winlose">
+            <p>Wins: <span id="winCount">0</span></p>
+            <p>Losses: <span id="lossCount">0</span></p>
+        </div>
+        <p id="word">——————————</p>
+        <p>GUESSED LETTERS:</p>
+        <p id="guessed">aabalsuebdlaudm</p>
     </div>
 
 
     <footer>
-        <p>Made by Gerard Pelly 2019</p>
+        <p>Made by Gerard Pelly</p>
     </footer>
 
 

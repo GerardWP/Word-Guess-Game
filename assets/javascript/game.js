@@ -65,9 +65,15 @@ document.onkeyup = function (event) {
 
     }
 
-    // if this array.join = that array.join then, reset all shit
+    if (guessesRemaining <= 0 && currentWord.join() !== blankWord.join()) {
+        console.log("You Lost!")
+    }
 
-    console.log(guessedLetters);
+    if (currentWord.join() === blankWord.join()) {
+        console.log("You Won!")
+    }
+
+    // console.log(guessedLetters);
     console.log(guessesRemaining);
     console.log(blankWord);
     console.log(currentWord);

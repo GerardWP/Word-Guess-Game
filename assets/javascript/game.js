@@ -15,6 +15,10 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
     "weary", "quest", "blazing", "tobacco", "bullets", "pistol", "brawl", "desert"
 ]
 
+var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
+    "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+];
+
 var wins = 0;
 var losses = 0;
 
@@ -44,6 +48,12 @@ function createBlankArray() {
 document.onkeyup = function (event) {
 
     var keyPress = event.key.toUpperCase();
+
+    if (alphabet.includes(keyPress) === false) {
+        return
+    }
+
+    // make an alphaet array and then an if statement, if the key press doesnt match a letter, then return
 
     if (guessedLetters.includes(keyPress)) {
         return
@@ -78,10 +88,14 @@ document.onkeyup = function (event) {
         currentWord = getRandomWord();
         blankWord = createBlankArray();;
     }
-
-
+    console.log("=============================");
+    console.log(blankWord);
+    console.log(currentWord);
+    console.log(guessesRemaining);
+    console.log(guessedLetters);
+    console.log(wins);
+    console.log(losses);
 }
-
 
 console.log(currentWord);
 console.log(blankWord);

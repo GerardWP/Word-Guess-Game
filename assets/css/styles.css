@@ -104,9 +104,12 @@ footer,
 
 #word {
     font-size: 1.8em;
-    letter-spacing: .7em;
-    margin: 15px 0 30px;
+    letter-spacing: .65em;
+    margin: 15px auto 30px;
     font-weight: bolder;
+    padding-left: .6em;
+    display: inline-block;
+    /* display and padding used to center text properly - didnt seem to be working otherwise */
 }
 
 #guessed {

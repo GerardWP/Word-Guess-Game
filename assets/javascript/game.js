@@ -33,10 +33,9 @@ var wins = 0,
     guessedLetters = [],
     allowedGuesses = 15;
 
-var currentWord = getRandomWord();
-
-var blankWord = createBlankArray();
-
+// var currentWord;
+// var blankWord; //why does this still work when i never declare these variable but use them multiple times later?
+// cant get the setTimeout to work
 
 function playWinAudio() {
     x.play();
@@ -46,11 +45,9 @@ function playLoseAudio() {
     y.play();
 }
 
-
 function getRandomWord() {
     return wordOptions[Math.floor(Math.random() * wordOptions.length)].toUpperCase().split("");
 }
-
 
 function createBlankArray() {
     var blankArray = [];
@@ -59,8 +56,21 @@ function createBlankArray() {
     return blankArray;
 };
 
+function makeWord() {
+    currentWord = getRandomWord()
+}
+
+function makeBlank() {
+    blankWord = createBlankArray();
+}
+
+
+
+makeWord();
+makeBlank();
 
 theWord.innerHTML = blankWord.join("");
+
 
 document.onkeyup = function (event) {
 
@@ -85,27 +95,22 @@ document.onkeyup = function (event) {
     }
 
     if (guessesRemaining <= 0 && currentWord.join() !== blankWord.join()) {
-        playLoseAudio();
         ++losses;
-        guessesRemaining = [];
+        guessesRemaining = ["15"];
         guessedLetters = [];
-        currentWord = getRandomWord();
-        blankWord = createBlankArray();
+        playLoseAudio();
+        makeWord();
+        makeBlank();
     }
 
     if (currentWord.join() === blankWord.join()) {
         ++wins;
         playWinAudio();
-        guessesRemaining = [];
+        makeWord();
+        makeBlank();
+        guessesRemaining = ["15"];
         guessedLetters = [];
-        currentWord = getRandomWord();
-        blankWord = createBlankArray();
-        //setTimeout(createBlankArray(), 3000);
-        // setTimeout(function () {
-        //     (blankWord = createBlankArray())
-        // }, 1000);
-        console.log(currentWord);
-        console.log(blankWord);
+
     }
 
     theWord.innerHTML = blankWord.join("");

@@ -11,13 +11,13 @@ var winText = document.getElementById("winCount"),
 
 var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon",
     "shootout", "cowgirl", "prospector", "sherrif", "outlaw", "revolver",
-    "heist", "robbery", "bounty", "convicted", "felon", "holster",
-    "fortune", "infamous", "lawless", "maverick", "reckless", "bandanna",
+    "heist", "robbery", "bounty", "convict", "felon", "holster", "western",
+    "fortune", "infamous", "lawless", "maverick", "campfire", "camp", "fire", "reckless", "bandanna",
     "feud", "blacksmith", "judge", "jail", "leather", "howdy", "hostile",
-    "wanted", "rawhide", "ranch", "rebellion", "rodeo", "notorious",
-    "stockade", "sober", "guns", "alibi", "decent", "gallop", "hardship",
-    "kinship", "dead", "vendetta", "terratory", "wild", "wrangler",
-    "weary", "quest", "blazing", "tobacco", "bullet", "pistol", "brawl", "desert"
+    "wanted", "rawhide", "ranch", "rebellion", "rodeo", "notorious", "horse",
+    "stockade", "sober", "guns", "alibi", "gold", "gallop", "hardship",
+    "kinship", "dead", "vendetta", "terratory", "wild", "wrangler", "hijack",
+    "weary", "quest", "blazing", "tobacco", "bullet", "pistol", "brawl", "desert", "gang"
 ]
 
 var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
@@ -121,14 +121,7 @@ document.onkeyup = function (event) {
     guessLeft.innerHTML = guessesRemaining;
     myGuesses.innerHTML = guessedLetters.join("");
 
-    // console.log("=============================");
-    // console.log(blankWord);
-    // console.log(currentWord);
-    // console.log(guessesRemaining);
-    // console.log(guessedLetters);
-    // console.log(wins);
-    // console.log(losses);
 }
 
-console.log(currentWord);
-console.log(blankWord);
+// console.log(currentWord);
+// console.log(blankWord);

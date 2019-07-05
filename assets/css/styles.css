@@ -13,7 +13,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: url(../images/background.jpg) no-repeat center;
+    background: url(../images/bg3.jpg) no-repeat center;
     background-size: cover;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -76,8 +76,6 @@ footer,
 }
 
 .title {
-    width: 600px;
-    max-width: 95%;
     margin: 10px auto 0;
     color: #fff;
 }
@@ -101,6 +99,7 @@ footer,
     margin: 0 auto;
     font-size: 1.2em;
     text-transform: uppercase;
+    text-shadow: none;
 }
 
 
@@ -109,6 +108,7 @@ footer,
     background: rgb(54, 197, 73);
     padding: 3px 15px;
     border-radius: 7px;
+    box-shadow: 1px 1px 3px rgb(31, 22, 22);
 }
 
 .winlose>p:nth-of-type(2) {
@@ -116,6 +116,7 @@ footer,
     background: rgb(219, 58, 58);
     padding: 3px 15px;
     border-radius: 7px;
+    box-shadow: 1px 1px 3px rgb(31, 22, 22);
 }
 
 .winlose>p:nth-of-type(3) {
@@ -123,6 +124,7 @@ footer,
     background: rgb(66, 66, 66);
     padding: 3px 15px;
     border-radius: 7px;
+    box-shadow: 1px 1px 3px rgb(31, 22, 22);
 }
 
 #word {

@@ -14,10 +14,10 @@ var wordOptions = ["redemption", "cowboy", "whiskey", "rifle", "steed", "saloon"
     "heist", "robbery", "bounty", "convicted", "felon", "holster",
     "fortune", "infamous", "lawless", "maverick", "reckless", "bandanna",
     "feud", "blacksmith", "judge", "jail", "leather", "howdy", "hostile",
-    "wanted", "rawhide", "ranch", "rebellious", "rodeo", "notorious",
-    "stockade", "supplies", "sober", "ability", "alibi", "decent", "gallop", "hardship",
+    "wanted", "rawhide", "ranch", "rebellion", "rodeo", "notorious",
+    "stockade", "sober", "guns", "alibi", "decent", "gallop", "hardship",
     "kinship", "dead", "vendetta", "terratory", "wild", "wrangler",
-    "weary", "quest", "blazing", "tobacco", "bullets", "pistol", "brawl", "desert"
+    "weary", "quest", "blazing", "tobacco", "bullet", "pistol", "brawl", "desert"
 ]
 
 var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
@@ -33,9 +33,8 @@ var wins = 0,
     guessedLetters = [],
     allowedGuesses = 15;
 
-// var currentWord;
-// var blankWord; //why does this still work when i never declare these variable but use them multiple times later?
-// cant get the setTimeout to work
+var currentWord;
+var blankWord;
 
 function playWinAudio() {
     x.play();
@@ -62,14 +61,13 @@ function makeWord() {
 
 function makeBlank() {
     blankWord = createBlankArray();
+    theWord.innerHTML = blankWord.join("");
 }
 
 
 
 makeWord();
 makeBlank();
-
-theWord.innerHTML = blankWord.join("");
 
 
 document.onkeyup = function (event) {
@@ -96,20 +94,24 @@ document.onkeyup = function (event) {
 
     if (guessesRemaining <= 0 && currentWord.join() !== blankWord.join()) {
         ++losses;
+        playLoseAudio();
         guessesRemaining = ["15"];
         guessedLetters = [];
-        playLoseAudio();
         makeWord();
-        makeBlank();
+        setTimeout(function () {
+            makeBlank();
+        }, 1000);
     }
 
     if (currentWord.join() === blankWord.join()) {
         ++wins;
         playWinAudio();
-        makeWord();
-        makeBlank();
         guessesRemaining = ["15"];
         guessedLetters = [];
+        makeWord();
+        setTimeout(function () {
+            makeBlank();
+        }, 1000);
 
     }
 
@@ -117,7 +119,7 @@ document.onkeyup = function (event) {
     winText.innerHTML = wins;
     loseText.innerHTML = losses;
     guessLeft.innerHTML = guessesRemaining;
-    myGuesses.innerHTML = guessedLetters;
+    myGuesses.innerHTML = guessedLetters.join("");
 
     // console.log("=============================");
     // console.log(blankWord);

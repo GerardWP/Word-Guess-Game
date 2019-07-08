@@ -123,5 +123,5 @@ document.onkeyup = function (event) {
 
 }
 
-// console.log(currentWord);
-// console.log(blankWord);
+console.log(currentWord);
+console.log(blankWord);
